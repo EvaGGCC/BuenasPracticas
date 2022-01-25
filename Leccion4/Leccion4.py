@@ -51,3 +51,38 @@ def maximo_compresion(maximo_dos_valores,lista):
     """
     maximos = [reduce(maximo_dos_valores,i) for i in lista]
     return maximos
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FUNCION FILTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Uso de Filter para el calculo de los numeros de una lista que son primos
+
+class Error(Exception):
+    """
+    Clase donde se define un Error
+    """
+    pass
+
+# Creamos la funcion a la que aplicar Filter
+def primosB(n):
+    """
+    Números primos. Indica si un valor es primo. Un valor es primo cuando
+    es divisible unicamente por dos valores, 1 y si mismo.
+    Input
+        n: valor a consultar
+    Output:
+        Informa si es o no primo
+    """
+    try:
+        if n<0:    # Exepcion de numeros negativos
+            raise Error
+        elif n==0 or n==1:  #0 y 1 no primos
+            return False
+        else:
+            for i in range (2,n):  # Excluido el 1 y el propio numero
+                # Condicion de primo
+                if n%i==0:      # Si Resto 0 no es primo
+                    return False    # No es primo
+            return True    # Si no se a cumplido lo demas es primo
+    except Error:
+        return False   #print(f"Los numeros negativos no son naturales")
+
