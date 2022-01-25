@@ -86,3 +86,22 @@ def primosB(n):
     except Error:
         return False   #print(f"Los numeros negativos no son naturales")
 
+
+
+# Comprobaciones rapidas 
+
+#                  RESOLUCION MAximo
+#----------------------------------------------------
+# Creamos una lista de Listas
+lista = [[2, 4, 1], [1,2,3,4,5,6,7,8], [100,250,43]]
+print(f"Fun1: {max_convencional(lista)}")
+print(f"Fun2: {max_compresion(lista)}")
+print(f"Fun3: {maximo_convencional(lista)}")
+print(f"Fun5: {maximo_clasico(maximo_dos_valores, lista)}")
+print(f"Fun6: {maximo_compresion(maximo_dos_valores, lista)}")
+
+#          RESOLUCION PRIMO
+#----------------------------------
+lista=range(0,25)
+primos=list(filter(primosB,lista))
+print(primos)
