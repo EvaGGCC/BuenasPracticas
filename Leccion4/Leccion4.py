@@ -7,14 +7,15 @@ from functools import reduce
 
 # -----> FUNCION MAXIMO
 
-# ... Método convencional
-def max_convencional(lista):
+# ... Método compresion de listas
+def max_compresion(lista):
+    # Añadimos el depurador
+    #pdb.set_trace()
     """
-    Calculo de los valores maximos de sublistas. Usando funcion max.
+    Calculo de los valores maximos de sublistas con compresion de listas y
+    funcion max.
     Contador:
         i: cada una de las sublistas
     """
-    maximos = []
-    for i in lista:
-        maximos.append(max(i))
+    maximos=[max(i) for i in lista]
     return maximos
