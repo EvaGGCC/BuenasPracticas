@@ -27,21 +27,27 @@ def max_compresion(lista):
 
 # -----> MEDIANTE BUCLES FOR
 
-# ... Metodo convencional
-def maximo_convencional(lista):
+
+def maximo_dos_valores(n,m):
     """
-    Calculo del maximo de lista de listas mediante bucles convencionales.
-    No se puede trasladar como tal a compresion de listas, uno de los bucles
-    no funciona mediante listas sino con variables
+    Devuelve el maximo entre dos valores.
+    """
+    if n>=m:
+        return n
+    else:
+        return m
+
+
+def maximo_compresion(maximo_dos_valores,lista):
+    """
+    Calcula el maximo de una lista de listas utilizando conpresion de listas.
+    Inputs:
+        maximo_dos_valores: funcion ya definida que calcula el maximo de n y m
+        lista: lista que contiene otra lista sobre la que calcular el maximo
+    Outputs:
+        maximos: Lista con valores maximo de cada sublista
     Contador:
         i: cada una de las sublistas
-        j: cada uno de las posiciones de la sublista
     """
-    maximos=[]
-    for i in lista:
-        m=0
-        for j in range(len(i)):
-            if i[j] > m:
-                m = i[j]
-        maximos.append(m)
+    maximos = [reduce(maximo_dos_valores,i) for i in lista]
     return maximos
