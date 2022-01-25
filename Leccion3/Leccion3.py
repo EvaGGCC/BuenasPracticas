@@ -4,49 +4,61 @@ class calculadora:
     """
     Calculadora. Clase para la realizacion de operaciones matematicas a partir de dos operadores.
 
-    Atributos
-    ---------
-    num1: primer operador
-    num2: segundo operadores
+    Atributos:
+        num1: primer operador
+        num2: segundo operadores
 
-    Metodos
-    -------
+    Metodos:
+        set_num1: modifica el valor de la variable num1
+        set_num2: modifica el valor de la variable num2
+        get_num1: devuelve el valor de la variable num1
+        get_num2: devuelve el valor de la variable num2
+        sumar: realiza la suma entre num1 y num2. Este metodo se usara en el metodo condiciones
+        restar: realiza la suma entre num1 y num2. Este metodo se usara en el metodo condiciones
+        multiplicar: realiza la multipliacion entre num1 y num2. Este metodo se usara en el metodo condiciones
+        dividir: realiza la division entre num1 y num2. Este metodo se usara en el metodo condiciones
+        valorespantalla: pide al usuario que introduzca los valores num1 y num2 por pantalla
+        condiciones: pregunta al usuario mediante un menu que quiere hacer con num1 y num2
 
-    set_num1: modifica el valor de la variable num1
-    set_num2: modifica el valor de la variable num2
-    get_num1: devuelve el valor de la variable num1
-    get_num2: devuelve el valor de la variable num2
-    sumar: realiza la suma entre num1 y num2. Este metodo se usara en el metodo condiciones
-    restar: realiza la suma entre num1 y num2. Este metodo se usara en el metodo condiciones
-    multiplicar: realiza la multipliacion entre num1 y num2. Este metodo se usara en el metodo condiciones
-    dividir: realiza la division entre num1 y num2. Este metodo se usara en el metodo condiciones
-    valorespantalla: pide al usuario que introduzca los valores num1 y num2 por pantalla
-    condiciones: pregunta al usuario mediante un menu que quiere hacer con num1 y num2
+    Ejemplo:
 
-    Ejemplo
-    -------
-    >>> import calculadora
-    >>> calc = calculadora(0,0)
-    >>> calc.valorespantalla()
-    >>> calc.condiciones()
+        >>> import calculadora
+        >>> calc = calculadora(0,0)
+        >>> calc.valorespantalla()
+        >>> calc.condiciones()
     """
     # Definimos atributos o propiedades
     def __init__(self, num1 = None, num2 = None):   #Con None esta clase puede tener o no parametros --> calculadora()   o calculadora(7,9)
+        """
+        Constructor. Define los atributos o argumentos num1 y num2.
+        """
         self.num1 = num1
         self.num2 = num2
 
     # Métodos SET (modificar valores)
     def set_num1(self, num1):
+        """
+        Método set num1. Modificación valor del operador num1.
+        """
         self.num1 = num1
 
     def set_num2(self, num2):
+        """
+        Método set num2. Modificación valor del operador num2.
+        """
         self.num2 = num2
 
     # Métodos GET (devuelven los valores)
     def get_num1(self):
+        """
+        Método get num1. Método para la obtención del valor del operador num1.
+        """
         return self.num1
 
     def get_num2(self):
+        """
+        Método set num2. Método para la obtención del valor del operador num2.
+        """
         return self.num2
 
 
