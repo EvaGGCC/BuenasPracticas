@@ -160,3 +160,13 @@ def gasto_total_anual(lista_gastos_mes):
 # 5. Ingresos totales anuales
 def ingreso_total_anual(lista_ingresos_mes):
     return sum(lista_ingresos_mes)
+
+# Gráfica ingresos
+
+x= list(fichero.columns)
+y= ingresos_mes
+plt.bar(x,y)
+plt.title("Ingresos mensuales")
+plt.xlabel("Meses")
+plt.ylabel("Ingresos")
+plt.show()
