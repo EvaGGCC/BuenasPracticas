@@ -115,3 +115,48 @@ def ingresos(fichero):
                 pass
         ingresos_mes.append(suma_ingresos)
     return ingresos_mes
+
+
+# 1. Mes de más gasto
+def mes_mayor_gasto(lista_gastos_mes):
+    #calculamos el minimo de la lista de gastos anteriormente obtenida
+    minimo = min(lista_gastos_mes)
+    #piden el mes, no la cantidad, obtenemos la posicion en la lista de este min
+    indice_min = lista_gastos_mes.index(minimo)
+    # HAcemos coincidir esta posicion con la lista de los meses
+    lista_meses=list(fichero.columns)
+    # Retornamos el mes, al hacer coincidir los indices.
+    return lista_meses[indice_min]
+
+def cantidad_mayor_gasto(lista_gastos_mes):
+    return min(lista_gastos_mes)
+
+# 2. Mes de más ahorro
+def mes_ahorro(lista_gastos_mes, lista_ingresos_mes):
+    # Lista vacia donde se añade el ahorro del mes
+    diferencia=[]
+    # Bucle para calcular el ahorro de cada mes
+    for i in range(len(lista_ingresos_mes)):
+        ganancias = lista_ingresos_mes[i]+lista_gastos_mes[i]
+        # Añadimos el resultado en la lista vacia
+        diferencia.append(ganancias)
+    # El mes d emas ahorro sera el maximo de la operacion realizada
+    cantidad_mes_mas_ahorro = max(diferencia)
+    #Conocemos los indices de el maximo
+    indice_dif=diferencia.index(cantidad_mes_mas_ahorro)
+    # Lo hacemos coincidir con el indice de los meses
+    lista_meses=list(fichero.columns)
+    return lista_meses[indice_dif]
+
+# 3. Media de gasto anual
+def media_gasto_anual(lista_gastos_mes):
+    return (sum(lista_gastos_mes)/len(lista_gastos_mes))
+
+
+# 4. Gasto total anual
+def gasto_total_anual(lista_gastos_mes):
+    return sum(lista_gastos_mes)
+
+# 5. Ingresos totales anuales
+def ingreso_total_anual(lista_ingresos_mes):
+    return sum(lista_ingresos_mes)
