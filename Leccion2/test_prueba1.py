@@ -25,3 +25,15 @@ def test_tipo_de_dato():
     df["Enero"]=[1,2,"error",-5,4]
     df["Febrero"]=[4,8,-1,"-6","no"]
     assert prueba1.tipo_de_dato(df)==["error","no"]
+
+def test_gastos():
+    df=pd.DataFrame()
+    df["Enero"]=[1,2,-3,-5,4]
+    df["Febrero"]=[4,8,-1,-6,9]
+    assert prueba1.gastos(df)==[-8,-7]
+
+def test_ingresos():
+    df=pd.DataFrame()
+    df["Enero"]=[1,2,-3,-5,4]
+    df["Febrero"]=[4,8,-1,-6,9]
+    assert prueba1.ingresos(df)==[7,21]
