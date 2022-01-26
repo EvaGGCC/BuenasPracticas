@@ -41,8 +41,24 @@ def test_ingresos():
 def test_mes_mayor_gasto():
     lista=[-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11]
     assert prueba1.mes_mayor_gasto(lista)=="Noviembre"
-    
+
+def test_cantidad_mayor_gasto():
+    lista= [-23,-22,-54,-67,-89]
+    assert prueba1.cantidad_mayor_gasto(lista)==-89
+
 def test_mes_ahorro():
     lista_ingreso=[87,56,90,78,56,38]
     lista_gasto=[-83,-45,-7,-10,-57,-3]
     assert prueba1.mes_ahorro(lista_gasto, lista_ingreso)=="Marzo"
+
+def test_media_gasto_anual():
+    lista = [-23,-22,-54,-67,-89]
+    assert prueba1.media_gasto_anual(lista)==-51
+
+def test_gasto_total_anual():
+    lista = [-23,-22,-54,-67,-89]
+    assert prueba1.gasto_total_anual(lista)==-255
+
+def test_ingreso_total_anual():
+    lista = [12,23,34,45,56,78,95]
+    assert prueba1.gasto_total_anual(lista)==343
