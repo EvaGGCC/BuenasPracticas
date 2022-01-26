@@ -75,3 +75,43 @@ def tipo_de_dato(fichero):
                     errores.append(j)
     # Devolvemos la lsita de errores
     return errores
+
+
+# La lista gastos_mes será variable global, para el calculo posterior de
+#las distintas operaciones requeridas
+gastos_mes=0
+def gastos(fichero):
+    # Indicamos que se trata de variable global
+    global gastos_mes
+    # lista vacia donde se almacenaran los valores
+    gastos_mes = []
+    #bucle que recorra las columnas
+    for i in fichero:
+        # Variable donde se iran sumando los valores
+        suma_gasto = 0
+        #bucle que recorra las filas
+        for j in fichero[i]:
+            # Como son gastos los valores han de ser negativos
+            if j<0:
+                # Suma de los valores negativos
+                suma_gasto += j
+            else:
+                pass
+        # Tras todos los valores negativos de la columna añadimos a la lista
+        gastos_mes.append(suma_gasto)
+    return gastos_mes
+
+# Realizamos lo mismo para los ingresos, valores positivos
+ingresos_mes = 0
+def ingresos(fichero):
+    global ingresos_mes
+    ingresos_mes = []
+    for i in fichero:
+        suma_ingresos = 0
+        for j in fichero[i]:
+            if j>0:
+                suma_ingresos += j
+            else:
+                pass
+        ingresos_mes.append(suma_ingresos)
+    return ingresos_mes
