@@ -24,3 +24,31 @@ def abrir_fichero(documento):
         respuesta = "El archivo no existe"
         print(respuesta)
     return respuesta
+
+# Funcion comprobar numero de columnas correcto
+class DemasidosMeses(Exception):
+    pass
+class PocosMeses(Exception):
+    pass
+
+def comprobar_columnas(fichero):
+    # Numero de columnas del fichero, con la longitud de este
+    numero_columnas = len(fichero.columns)
+    # Condiciones de columnas
+    try:
+        # Si es mayor lo indica la excepcion, al igual que si es menor
+        if numero_columnas > 12:
+            #Añadimos excepcion
+            raise DemasidosMeses
+        elif  numero_columnas > 12:
+            raise PocosMeses
+        else:
+            # Si es igual a 12 (12 meses) Lo indica
+            print(f"EL numero de meses es {numero_columnas}")
+    # Llamamos las excepciones
+    except DemasidosMeses:
+        print(f"El documento contiene mas de 12 columnas, {numero_columnas}")
+    except PocosMeses:
+        print(f"El documento contiene {numero_columnas}")
+    # Devolvemos el numero de columnas
+    return numero_columnas
