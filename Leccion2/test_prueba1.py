@@ -37,3 +37,12 @@ def test_ingresos():
     df["Enero"]=[1,2,-3,-5,4]
     df["Febrero"]=[4,8,-1,-6,9]
     assert prueba1.ingresos(df)==[7,21]
+
+def test_mes_mayor_gasto():
+    lista=[-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11]
+    assert prueba1.mes_mayor_gasto(lista)=="Noviembre"
+    
+def test_mes_ahorro():
+    lista_ingreso=[87,56,90,78,56,38]
+    lista_gasto=[-83,-45,-7,-10,-57,-3]
+    assert prueba1.mes_ahorro(lista_gasto, lista_ingreso)=="Marzo"
