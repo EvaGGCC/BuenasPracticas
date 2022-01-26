@@ -52,3 +52,26 @@ def comprobar_columnas(fichero):
         print(f"El documento contiene {numero_columnas}")
     # Devolvemos el numero de columnas
     return numero_columnas
+
+def tipo_de_dato(fichero):
+    # Lista vacia donde introduciremos los valores erroneos para los test unitarios
+    errores=[]
+    # Bucle que recorre las columnas
+    for i in fichero:
+        # Bucle que recorre las filas
+        for j in fichero[i]:
+            # Si el valor es una cadena de texto (str)
+            if type(j)==str:
+                # Convertimos a entero
+                try:
+                    nuevo_j=int(j)
+                    fichero[i]=fichero[i].replace(j, nuevo_j)
+                    # Si no es posible lo convertimos en 0
+                except:
+                    fichero[i]=fichero[i].replace(j, int(0))
+                    print(f"Mes: {i} ; errorneo: {j}")
+                    # Añadimos los valores que no se pueden transformar a errores
+                    # Haremos uso de ella en los test unitarios
+                    errores.append(j)
+    # Devolvemos la lsita de errores
+    return errores
